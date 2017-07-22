@@ -57,8 +57,8 @@ void PortFInit(void)
     GPIO_PORTF_PCTL_R = 0x00000000; //GPIO clear bit PCTL
     GPIO_PORTF_DIR_R = 0x06;        //PF2, PF1 output, PF4,PF0 input
     GPIO_PORTF_AFSEL_R = 0x00;      //Clear alt functions
-    GPIO_PORTF_PUR_R = 0x11;        //Enable pull-up resistor on PF4 and PF0
-    GPIO_PORTF_DEN_R = 0x17;        //Enable digital pin PF4, PF0 and PF2-1
+    GPIO_PORTF_PUR_R |= 0x11;       //Enable pull-up resistor on PF4 and PF0
+    GPIO_PORTF_DEN_R |= 0x17;       //Enable digital pin PF4, PF0 and PF2-1
 }
 
 //Using the 400MHz PLL we get the bus frequency by dividing
